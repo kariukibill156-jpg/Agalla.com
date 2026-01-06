@@ -1,2 +1,1 @@
-# Agalla.com
-Spider 
+Web developer
