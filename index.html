@@ -1,83 +1,244 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="Affordable and professional web design">
-	  <meta name="keywords" content="web design, affordable web design, professional web design">
-  	<meta name="author" content="Agalla Bill">
-    <title>Agalla Web Solution | Welcome</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" href="img/favicon.png">
-  </head>
-  <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daudi Greens Foundation</title>
+    
+    <!-- Inline CSS -->
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom right, #e6f7e6, #ffffff);
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: #2e8b57;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* CSS Logo */
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px auto;
+            position: relative;
+        }
+
+        .logo-circle {
+            width: 100px;
+            height: 100px;
+            background-color: #4caf50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .logo-leaf {
+            width: 20px;
+            height: 40px;
+            background-color: #ffffff;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            transform: rotate(-20deg);
+            position: absolute;
+            top: 15px;
+            left: 40px;
+        }
+
+        .logo-leaf2 {
+            width: 20px;
+            height: 40px;
+            background-color: #ffffff;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            transform: rotate(20deg);
+            position: absolute;
+            top: 15px;
+            left: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #3cb371;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            font-weight: bold;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #2e8b57;
+            border-radius: 5px;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            color: #2e8b57;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* Contact form */
+        #contact input, #contact textarea {
+            padding: 12px;
+            margin: 10px 0;
+            width: 90%;
+            max-width: 400px;
+            border: 2px solid #2e8b57;
+            border-radius: 5px;
+            font-size: 1em;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        #contact input:focus, #contact textarea:focus {
+            border-color: #1b5e20;
+        }
+
+        #contact button {
+            padding: 12px 30px;
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        #contact button:hover {
+            background-color: #1b5e20;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
     <header>
-      <div class="container">
-        <div id="branding">
-          <h1><span class="highlight">Agalla Web</span> Designer</h1>
+        <!-- CSS Logo -->
+        <div class="logo">
+            <div class="logo-circle"></div>
+            <div class="logo-leaf"></div>
+            <div class="logo-leaf2"></div>
         </div>
-        <nav>
-          <ul>
-            <li class="current"><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-          </ul>
-        </nav>
-      </div>
+        <h1>Daudi Greens Foundation</h1>
+        <p>Promoting sustainable green initiatives and community farming</p>
     </header>
 
-    <section id="showcase">
-      <div class="container">
-        <h1> </h1>
-        <p> </p>
-      </div>
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Sections -->
+    <section id="home">
+        <h2>Home</h2>
+        <p>Welcome to Daudi Greens Foundation. Our mission is to empower communities through sustainable farming, environmental conservation, and education about green initiatives. Join us in creating a healthier, greener future.</p>
     </section>
 
-    <section id="newsletter">
-      <div class="container">
-        <h1>Subscribe To Our Newsletter</h1>
-        <form>
-          <input type="email" placeholder="Enter Email..." required>
-          <button type="submit" class="button_1">Subscribe</button>
-        </form>
-      </div>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Daudi Greens Foundation is dedicated to promoting sustainable agriculture and environmental awareness. We train local farmers, implement community projects, and educate young people on the importance of green living.</p>
     </section>
 
-    <section id="boxes">
-      <div class="container">
-        <div class="box">
-            
- 
-                  <img src="./img/memes.png">
-                   <img src="./img/memes.png">
-          <h3>Raster HTML5 Markup</h3>
-          
-    <p>Create fast and responsive web layouts using modern HTML5 standards. Perfect for beginner and professional web designers.</p>
-        </div>
-        <div class="box">
-          <img src="./img/seed.png">
-           <img src="./img/seed.png">
-          <h3>Junk "N" Stuff Quality</h3>
-             <p>High-quality items for your garden and home. Carefully selected products that ensure value and satisfaction every time.</p>
-        </div>
-        <div class="box">
-            
- 
-                  <img src="./img/weed.png">
-                   <img src="./img/weed.png">
-            
-          <h3>Graphic Weed Design</h3>
-          
-    <p>Creative designs and graphics for digital media. Perfect for branding, social media, and unique visual storytelling.</p>
-        </div>
-      </div>
+    <section id="projects">
+        <h2>Our Projects</h2>
+        <p>We run tree planting campaigns, community gardens, and eco-education workshops. Every initiative is designed to create lasting impact and improve local livelihoods while protecting the environment.</p>
     </section>
 
-<a href="tel:+254117527895" class="phone-btn">
-  Call Us
-</a>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Reach out to us to join our programs or support our initiatives:</p>
+        <input type="text" placeholder="Your Name" id="name"><br>
+        <input type="email" placeholder="Your Email" id="email"><br>
+        <textarea placeholder="Your Message" id="message"></textarea><br>
+        <button onclick="sendMessage()">Send Message</button>
+    </section>
 
+    <!-- Footer -->
     <footer>
-      <p>Agalla Web Solution, Copyright &copy; 2026</p>
+        &copy; 2026 Daudi Greens Foundation | All rights reserved
     </footer>
-  </body>
-</html>
+
+    <!-- Inline JavaScript -->
+    <script>
+        function sendMessage() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if(name && email && message) {
+                alert(`Thanks ${name}! Your message has been sent.`);
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('message').value = '';
+            } else {
+                alert('Please fill in all fields.');
+            }
+        }
+    </script>
+
+</body>
