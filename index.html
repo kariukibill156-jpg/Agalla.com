@@ -3,214 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nyikwa Salina Otieno</title>
-<style>
-  /* COLORS & FONTS */
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
-    background: #1a1a1a;
-    color: #fff;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  /* HEADER */
-  header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(26,26,26,0.9);
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 50px;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-  }
-
-  header h1 {
-    font-size: 2em;
-    color: #9b59b6; /* purple */
-  }
-
-  nav a {
-    margin-left: 30px;
-    font-weight: 500;
-    transition: 0.3s;
-  }
-
-  nav a:hover {
-    color: #9b59b6;
-  }
-
-  /* HERO SECTION */
-  .hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: linear-gradient(135deg, #6a0dad, #000000);
-  }
-
-  .hero h2 {
-    font-size: 3em;
-    margin: 0;
-  }
-
-  .hero p {
-    font-size: 1.2em;
-    margin-top: 10px;
-    color: #ccc;
-  }
-
-  /* PROJECTS */
-  .projects {
-    padding: 100px 50px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    background: #111;
-  }
-
-  .project-card {
-    background: #222;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(155, 89, 182, 0.5);
-  }
-
-  .project-card img {
-    width: 100%;
-    display: block;
-  }
-
-  .project-card h3 {
-    padding: 15px;
-    color: #9b59b6;
-  }
-
-  .project-card p {
-    padding: 0 15px 15px;
-    color: #ccc;
-    font-size: 0.9em;
-  }
-
-  /* CONTACT */
-  .contact {
-    padding: 100px 50px;
-    text-align: center;
-    background: #111;
-  }
-
-  .contact h2 {
-    color: #9b59b6;
-  }
-
-  .contact form {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .contact input, .contact textarea {
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
-    font-size: 1em;
-  }
-
-  .contact button {
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    background: #9b59b6;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  .contact button:hover {
-    background: #7a3fa3;
-  }
-
-  /* FOOTER */
-  footer {
-    text-align: center;
-    padding: 20px;
-    background: #111;
-    color: #777;
-  }
-
-</style>
+<title>Carlvin Tech Solutions</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
+<!-- NAVBAR -->
 <header>
-  <h1>Nyikwa Salina Otieno(Dakuon)</h1>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+  <nav class="navbar">
+    <h1 class="logo">Carlvin<span>Tech</span></h1>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="menu-btn"><i class="fas fa-bars"></i></div>
   </nav>
 </header>
 
-<section class="hero" id="about">
-  <h2>Hi, I'm Daudi</h2>
-  <p>A passionate web developer & designer.</p>
-</section>
-
-<section class="projects" id="projects">
-  <div class="project-card">
-    <img src="https://via.placeholder.com/400x200.png?text=Project+1" alt="Project 1">
-    <h3>Project 1</h3>
-    <p>Short description about this amazing project.</p>
-  </div>
-  <div class="project-card">
-    <img src="https://via.placeholder.com/400x200.png?text=Project+2" alt="Project 2">
-    <h3>Project 2</h3>
-    <p>Short description about this amazing project.</p>
-  </div>
-  <div class="project-card">
-    <img src="https://via.placeholder.com/400x200.png?text=Project+3" alt="Project 3">
-    <h3>Project 3</h3>
-    <p>Short description about this amazing project.</p>
+<!-- HERO -->
+<section id="home" class="hero">
+  <img src="profile.jpg" class="profile-img" alt="Carlvin Profile">
+  <h2>Hello, I’m <span>Carlvin</span></h2>
+  <p>Frontend Developer • UI/UX Designer</p>
+  <div class="hero-buttons">
+    <a href="#contact" class="btn">Hire Me</a>
+    <a href="https://wa.me/254117527895" class="btn whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
   </div>
 </section>
 
-<section class="contact" id="contact">
+<!-- ABOUT -->
+<section id="about" class="section">
+  <h2>About Me</h2>
+  <p class="text">I design and develop modern, responsive, and professional websites using the latest technologies.</p>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section dark">
+  <h2>Services</h2>
+  <div class="cards">
+    <div class="card glass"><i class="fas fa-code"></i><h3>Web Development</h3><p>Clean, fast websites.</p></div>
+    <div class="card glass"><i class="fas fa-paint-brush"></i><h3>UI/UX Design</h3><p>User-friendly interfaces.</p></div>
+    <div class="card glass"><i class="fas fa-laptop"></i><h3>Portfolio Sites</h3><p>Professional portfolios.</p></div>
+    <div class="card glass"><i class="fas fa-mobile-alt"></i><h3>Responsive Design</h3><p>Perfect on any device.</p></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <h2>Projects</h2>
+  <div class="cards">
+    <div class="project-card"><img src="project1.jpg"><h3>Portfolio Website</h3></div>
+    <div class="project-card"><img src="project2.jpg"><h3>Business Website</h3></div>
+    <div class="project-card"><img src="project3.jpg"><h3>Landing Page</h3></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section dark">
   <h2>Contact Me</h2>
-  <form>
+  <form class="contact-form">
     <input type="text" placeholder="Your Name" required>
     <input type="email" placeholder="Your Email" required>
-    <textarea rows="5" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
+    <textarea placeholder="Your Message" required></textarea>
+    <button class="btn">Send Message</button>
   </form>
 </section>
 
 <footer>
-  &copy; 2026 Daudi. All rights reserved.
+  <p>© 2026 Carlvin Tech Solutions</p>
 </footer>
 
 </body>
 </html>
-
-
-
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/index.js"></script>
+</head>
+<body>
+</body>
+</html>
