@@ -1,18 +1,13 @@
-// Mobile Menu
-const menuBtn=document.querySelector(".menu-btn");
-const navLinks=document.querySelector(".nav-links");
-menuBtn.addEventListener("click",()=>{navLinks.classList.toggle("active")})
+function scrollToContact(){
+document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+}
 
-// Contact form
-const contactForm=document.querySelector(".contact-form");
-contactForm?.addEventListener("submit",e=>{
-    e.preventDefault()
-    const name=e.target[0].value
-    const email=e.target[1].value
-    const message=e.target[2].value
-    let messages=JSON.parse(localStorage.getItem("messages"))||[]
-    messages.push({name,email,message})
-    localStorage.setItem("messages",JSON.stringify(messages))
-    alert("Message sent successfully!")
-    e.target.reset()
-})
+const sections=document.querySelectorAll(".fade-in");
+window.addEventListener("scroll",()=>{
+sections.forEach(sec=>{
+const pos=sec.getBoundingClientRect().top;
+if(pos<window.innerHeight-100){
+sec.classList.add("show");
+}
+});
+});
