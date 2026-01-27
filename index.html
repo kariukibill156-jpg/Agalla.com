@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bill Kariuki | Cyber Security Student</title>
+<title>Karis The GOAT 🐐</title>
 
 <style>
 :root{
@@ -22,7 +22,6 @@
 body{
   background:var(--white);
   color:var(--black);
-  line-height:1.6;
   transition:0.3s;
   overflow-x:hidden;
 }
@@ -32,18 +31,18 @@ body.dark{
   color:var(--white);
 }
 
-/* BACKGROUND CANVAS */
-#bg{
+/* BACKGROUND */
+canvas{
   position:fixed;
   inset:0;
   z-index:0;
 }
 
-/* NAVBAR */
+/* NAV */
 header{
   position:fixed;
-  width:100%;
   top:0;
+  width:100%;
   background:black;
   z-index:10;
 }
@@ -63,25 +62,10 @@ header{
   font-weight:bold;
 }
 
-.nav a{
-  color:white;
-  margin-left:18px;
-  text-decoration:none;
-  font-weight:600;
-}
-
-.menu{
-  display:none;
-  color:white;
-  font-size:24px;
-  cursor:pointer;
-}
-
 .toggle{
   border:1px solid white;
-  color:white;
   padding:5px 10px;
-  margin-left:10px;
+  color:white;
   cursor:pointer;
 }
 
@@ -107,11 +91,17 @@ body.dark .hero{
   height:150px;
   border-radius:50%;
   border:4px solid black;
+  object-fit:cover;
 }
 
 .hero h1{
   margin-top:15px;
-  font-size:32px;
+  font-size:34px;
+}
+
+.hero p{
+  margin-top:10px;
+  font-size:18px;
 }
 
 .btn{
@@ -158,16 +148,31 @@ h2{
   transform:translateY(0);
 }
 
-.socials{
-  text-align:center;
-  margin-top:15px;
+/* WIFI TABLE */
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:20px;
 }
 
-.socials a{
-  margin:0 10px;
-  color:black;
+td, th{
+  border:2px solid black;
+  padding:12px;
+  text-align:center;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:black;
+  color:white;
+  padding:12px 18px;
+  border-radius:30px;
   text-decoration:none;
   font-weight:bold;
+  z-index:20;
 }
 
 footer{
@@ -176,186 +181,199 @@ footer{
   text-align:center;
   padding:15px;
 }
-
-/* MOBILE */
-@media(max-width:768px){
-  .menu{display:block;}
-  .links{
-    position:absolute;
-    right:0;
-    top:60px;
-    background:black;
-    width:200px;
-    display:none;
-    flex-direction:column;
-  }
-  .links a{
-    padding:15px;
-  }
-}
 </style>
 </head>
 
 <body>
 
 <canvas id="bg"></canvas>
+<a class="whatsapp" href="https://wa.me/254713147856" target="_blank" onclick="offlineCheck(event)">
+  WhatsApp
+</a>
+
+<script>
+function offlineCheck(event){
+  if(!navigator.onLine){
+    event.preventDefault();
+    alert("You are offline! WhatsApp link needs internet.\nCall or message this number: +254712345678");
+  }
+}
+</script>
+<a class="whatsapp" href="https://wa.me/254713147856" target="_blank">
+  WhatsApp
+</a>
+<a class="whatsapp" href="https://wa.me/254713147856" target="_blank">
+  WhatsApp
+</a>
 
 <header>
   <div class="nav">
-    <div class="logo">Bill Kariuki</div>
-    <div>
-      <span class="menu" onclick="menu()">☰</span>
-      <span class="toggle" onclick="dark()">Dark</span>
-    </div>
-    <div class="links" id="links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#work">Part-Time</a>
-      <a href="#contact">Contact</a>
-    </div>
+    <div class="logo">Karis 🐐</div>
+    <span class="toggle" onclick="dark()">Dark</span>
   </div>
 </header>
 
-<section class="hero" id="home">
-  <img src="https://via.placeholder.com/150">
-  <h1>Bill Kariuki</h1>
+<section class="hero">
+  <img src="profile.jpg" alt="Karis the GOAT">
+
+  <!-- TYPING TEXT -->
+  <h1 id="type"></h1>
+
   <p>
-    Bachelor of Science in Cyber Security<br>
-    <b>Mount Kenya University</b> — Year Three Student
+    Built Different • Focused • Always Connected
   </p>
-  <a href="#contact" class="btn">Contact Me</a>
+
+  <a href="#wifi" class="btn">WiFi Status</a>
 </section>
 
-<section id="about">
+<section>
   <div class="container">
-    <h2>About Me</h2>
+    <h2>About Karis 🐐</h2>
     <p>
-      I am a passionate Cyber Security student at Mount Kenya University,
-      driven by a strong interest in protecting systems, networks,
-      and digital assets against modern cyber threats.
+      Karis the GOAT represents consistency, resilience, and smart hustle.
+      Always online. Always ready. Always delivering.
     </p>
   </div>
 </section>
 
-<section id="skills">
+<section>
   <div class="container">
-    <h2>Skills</h2>
+    <h2>Why Karis is the GOAT</h2>
     <div class="grid">
-      <div class="card">Cyber Security Fundamentals</div>
-      <div class="card">Networking Basics</div>
-      <div class="card">Web Development</div>
-      <div class="card">System Security Awareness</div>
+      <div class="card">24/7 Network Availability</div>
+      <div class="card">Reliable & Secure Connection</div>
+      <div class="card">Silent Hustle</div>
+      <div class="card">GOAT Mentality</div>
     </div>
   </div>
 </section>
 
-<section id="work">
+<section id="wifi">
   <div class="container">
-    <h2>Part-Time Work</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Part-Time Position</h3>
-        <p><!-- Fill yourself --></p>
-      </div>
-    </div>
-  </div>
-</section>
+    <h2>Network / WiFi Table 📡</h2>
 
-<section id="contact">
-  <div class="container">
-    <h2>Contact & Socials</h2>
-    <p>Email: yourname@email.com</p>
-    <p>Phone: +254 xxx xxx xxx</p>
-    <div class="socials">
-      <a href="https://github.com/">GitHub</a>
-      <a href="https://linkedin.com/">LinkedIn</a>
-      <a href="cv.pdf" download>Download CV</a>
-    </div>
+    <table>
+      <tr>
+        <th>Service</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td>WiFi Connection</td>
+        <td>Active ✅</td>
+      </tr>
+      <tr>
+        <td>Network Speed</td>
+        <td>Fast ⚡</td>
+      </tr>
+      <tr>
+        <td>Availability</td>
+        <td>24/7 ⏰</td>
+      </tr>
+      <tr>
+        <td>Security</td>
+        <td>Protected 🔒</td>
+      </tr>
+    </table>
   </div>
 </section>
 
 <footer>
-  © 2026 Bill Kariuki | Cyber Security Student
+  © 2026 Karis The GOAT 🐐 | Always Online • Always Winning
 </footer>
 
 <script>
-// MENU
-function menu(){
-  const l=document.getElementById("links");
-  l.style.display=l.style.display==="flex"?"none":"flex";
-}
-
 // DARK MODE
 function dark(){
   document.body.classList.toggle("dark");
 }
 
-// REVEAL
+// CARD REVEAL
 const cards=document.querySelectorAll(".card");
 function reveal(){
   cards.forEach(c=>{
-    if(c.getBoundingClientRect().top<window.innerHeight-50){
+    if(c.getBoundingClientRect().top < window.innerHeight-50){
       c.classList.add("show");
     }
   });
 }
-window.addEventListener("scroll",reveal);
+window.addEventListener("scroll", reveal);
 reveal();
 
-// CYBER BACKGROUND WITH LOCKS
+// TYPING EFFECT
+const text="Karis The GOAT 🐐";
+let i=0;
+function type(){
+  if(i<text.length){
+    document.getElementById("type").innerHTML+=text.charAt(i);
+    i++;
+    setTimeout(type,120);
+  }
+}
+type();
+
+// CYBER BACKGROUND
 const canvas=document.getElementById("bg");
 const ctx=canvas.getContext("2d");
 canvas.width=innerWidth;
 canvas.height=innerHeight;
 
-const nodes=[];
+const dots=[];
 for(let i=0;i<50;i++){
-  nodes.push({
+  dots.push({
     x:Math.random()*canvas.width,
     y:Math.random()*canvas.height,
     dx:(Math.random()-0.5)*0.6,
-    dy:(Math.random()-0.5)*0.6,
-    lock:Math.random()<0.2
+    dy:(Math.random()-0.5)*0.6
   });
 }
 
-function draw(){
+function animate(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
-  nodes.forEach((n,i)=>{
-    n.x+=n.dx; n.y+=n.dy;
-    if(n.x<0||n.x>canvas.width) n.dx*=-1;
-    if(n.y<0||n.y>canvas.height) n.dy*=-1;
+  dots.forEach((d,i)=>{
+    d.x+=d.dx;
+    d.y+=d.dy;
+    if(d.x<0||d.x>canvas.width) d.dx*=-1;
+    if(d.y<0||d.y>canvas.height) d.dy*=-1;
 
-    ctx.fillStyle="rgba(0,0,0,0.7)";
-    if(n.lock){
-      ctx.font="16px Arial";
-      ctx.fillText("🔒",n.x,n.y);
-    }else{
-      ctx.beginPath();
-      ctx.arc(n.x,n.y,2,0,Math.PI*2);
-      ctx.fill();
-    }
+    ctx.beginPath();
+    ctx.arc(d.x,d.y,2,0,Math.PI*2);
+    ctx.fill();
 
-    for(let j=i+1;j<nodes.length;j++){
-      let dx=n.x-nodes[j].x;
-      let dy=n.y-nodes[j].y;
-      let d=Math.sqrt(dx*dx+dy*dy);
-      if(d<120){
+    for(let j=i+1;j<dots.length;j++){
+      let dx=d.x-dots[j].x;
+      let dy=d.y-dots[j].y;
+      let dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<120){
         ctx.strokeStyle="rgba(0,0,0,0.1)";
         ctx.beginPath();
-        ctx.moveTo(n.x,n.y);
-        ctx.lineTo(nodes[j].x,nodes[j].y);
+        ctx.moveTo(d.x,d.y);
+        ctx.lineTo(dots[j].x,dots[j].y);
         ctx.stroke();
       }
     }
   });
-  requestAnimationFrame(draw);
+  requestAnimationFrame(animate);
 }
-draw();
+animate();
 
-onresize=()=>{canvas.width=innerWidth;canvas.height=innerHeight;}
+onresize=()=>{
+  canvas.width=innerWidth;
+  canvas.height=innerHeight;
+};
 </script>
 
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/index.js"></script>
+  <title>Tuesday 2</title>
+</head>
+<body>
+	<h1></h1>
 </body>
 </html>
