@@ -1,221 +1,360 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daudi Greens | Portfolio</title>
+<title>Bill Kariuki | Cyber Security Student</title>
 
 <style>
 :root{
-  --primary:#22c55e;
-  --bg:#0f172a;
-  --card:#020617;
-  --text:#ffffff;
+  --black:#000;
+  --white:#fff;
+  --gray:#f2f2f2;
 }
-.light{
-  --bg:#f8fafc;
-  --card:#ffffff;
-  --text:#020617;
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
-*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif;}
-body{background:var(--bg);color:var(--text);scroll-behavior:smooth;}
+
+body{
+  background:var(--white);
+  color:var(--black);
+  line-height:1.6;
+  transition:0.3s;
+  overflow-x:hidden;
+}
+
+body.dark{
+  background:var(--black);
+  color:var(--white);
+}
+
+/* BACKGROUND CANVAS */
+#bg{
+  position:fixed;
+  inset:0;
+  z-index:0;
+}
 
 /* NAVBAR */
 header{
-  position:fixed;width:100%;padding:15px 8%;
-  background:rgba(2,6,23,.9);
-  backdrop-filter:blur(10px);
-  display:flex;justify-content:space-between;align-items:center;
-  z-index:1000;
+  position:fixed;
+  width:100%;
+  top:0;
+  background:black;
+  z-index:10;
 }
-.logo{font-size:24px;font-weight:700;color:var(--primary);}
-nav{display:flex;gap:25px;}
-nav a{color:var(--text);text-decoration:none;position:relative;}
-nav a::after{
-  content:'';position:absolute;width:0;height:2px;
-  background:var(--primary);left:0;bottom:-6px;transition:.3s;
+
+.nav{
+  max-width:1100px;
+  margin:auto;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
-nav a:hover::after{width:100%;}
-.menu{display:none;font-size:28px;cursor:pointer;}
-.toggle{cursor:pointer;font-size:20px;}
+
+.logo{
+  color:white;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.nav a{
+  color:white;
+  margin-left:18px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.menu{
+  display:none;
+  color:white;
+  font-size:24px;
+  cursor:pointer;
+}
+
+.toggle{
+  border:1px solid white;
+  color:white;
+  padding:5px 10px;
+  margin-left:10px;
+  cursor:pointer;
+}
 
 /* SECTIONS */
-section{padding:120px 8%;min-height:100vh;}
-
-/* HOME */
-#home{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
-.avatar{
-  width:260px;height:260px;border-radius:50%;
-  border:5px solid var(--primary);
-  background:url("profile.jpg") center/cover no-repeat;
+section{
+  padding:100px 20px;
+  position:relative;
+  z-index:1;
 }
-.typing{color:var(--primary);font-size:22px;height:30px;}
+
+.hero{
+  padding-top:140px;
+  text-align:center;
+  background:var(--gray);
+}
+
+body.dark .hero{
+  background:#111;
+}
+
+.hero img{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  border:4px solid black;
+}
+
+.hero h1{
+  margin-top:15px;
+  font-size:32px;
+}
+
 .btn{
-  display:inline-block;margin-top:20px;padding:12px 30px;
-  background:var(--primary);color:#000;border-radius:30px;
-  text-decoration:none;font-weight:600;transition:.3s;
+  display:inline-block;
+  margin-top:20px;
+  padding:10px 25px;
+  border:2px solid black;
+  text-decoration:none;
+  color:black;
+  font-weight:bold;
 }
-.btn:hover{transform:scale(1.1);}
 
-/* ABOUT */
-#about p{max-width:750px;line-height:1.8;}
+.btn:hover{
+  background:black;
+  color:white;
+}
 
-/* SKILLS */
-.skill{margin:20px 0;}
-.skill span{display:flex;justify-content:space-between;}
-.bar{background:var(--card);border-radius:20px;overflow:hidden;}
-.bar div{height:12px;background:var(--primary);width:0;}
+.container{
+  max-width:1000px;
+  margin:auto;
+}
 
-/* PROJECTS */
-.projects{
+h2{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-}
-.project{
-  background:var(--card);padding:25px;border-radius:15px;
-  transition:.3s;position:relative;overflow:hidden;
-}
-.project:hover{transform:translateY(-10px);}
-.project::after{
-  content:"View Project";position:absolute;inset:0;
-  background:rgba(34,197,94,.9);color:#000;
-  display:flex;align-items:center;justify-content:center;
-  opacity:0;transition:.3s;font-weight:700;
-}
-.project:hover::after{opacity:1;}
-
-/* CONTACT */
-.contact-btns a{
-  display:inline-block;margin:10px 10px 0 0;
-  padding:12px 25px;border-radius:25px;
-  background:var(--primary);color:#000;
-  text-decoration:none;font-weight:600;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:20px;
 }
 
-/* FOOTER */
-footer{background:var(--card);text-align:center;padding:15px;}
+.card{
+  border:2px solid black;
+  padding:20px;
+  opacity:0;
+  transform:translateY(20px);
+  transition:0.4s;
+}
 
-/* ANIMATION */
-.reveal{opacity:0;transform:translateY(40px);transition:1s;}
-.reveal.active{opacity:1;transform:none;}
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
 
-/* RESPONSIVE */
-@media(max-width:850px){
-  #home{grid-template-columns:1fr;}
-  nav{
-    position:absolute;top:65px;right:0;
-    background:var(--card);
-    flex-direction:column;width:200px;display:none;
-  }
-  nav.active{display:flex;}
+.socials{
+  text-align:center;
+  margin-top:15px;
+}
+
+.socials a{
+  margin:0 10px;
+  color:black;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+footer{
+  background:black;
+  color:white;
+  text-align:center;
+  padding:15px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
   .menu{display:block;}
+  .links{
+    position:absolute;
+    right:0;
+    top:60px;
+    background:black;
+    width:200px;
+    display:none;
+    flex-direction:column;
+  }
+  .links a{
+    padding:15px;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<canvas id="bg"></canvas>
+
 <header>
-  <div class="logo">Daudi Greens</div>
-  <div>
-    <span class="toggle" onclick="toggleTheme()">🌙</span>
-    <span class="menu" onclick="toggleMenu()">☰</span>
+  <div class="nav">
+    <div class="logo">Bill Kariuki</div>
+    <div>
+      <span class="menu" onclick="menu()">☰</span>
+      <span class="toggle" onclick="dark()">Dark</span>
+    </div>
+    <div class="links" id="links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">Part-Time</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
-  <nav id="nav">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
 </header>
 
-<section id="home">
-  <div>
-    <h1>Hello, I'm <span style="color:var(--primary)">Daudi Greens</span></h1>
-    <div class="typing" id="typing"></div>
-    <a href="Daudi_Greens_CV.pdf" download class="btn">Download CV</a>
-  </div>
-  <div class="avatar"></div>
-</section>
-
-<section id="about" class="reveal">
-  <h2>About Me</h2>
+<section class="hero" id="home">
+  <img src="https://via.placeholder.com/150">
+  <h1>Bill Kariuki</h1>
   <p>
-    A Home Of Cost-Effective and Highly Profitable Productivity Modern and Practical Agriculture 
+    Bachelor of Science in Cyber Security<br>
+    <b>Mount Kenya University</b> — Year Three Student
   </p>
+  <a href="#contact" class="btn">Contact Me</a>
 </section>
 
-<section id="skills" class="reveal">
-  <h2>Skills</h2>
-  <div class="skill"><span><b>HTML</b><b>90%</b></span><div class="bar"><div data-width="90%"></div></div></div>
-  <div class="skill"><span><b>CSS</b><b>85%</b></span><div class="bar"><div data-width="85%"></div></div></div>
-  <div class="skill"><span><b>JavaScript</b><b>75%</b></span><div class="bar"><div data-width="75%"></div></div></div>
-</section>
-
-<section id="projects" class="reveal">
-  <h2>Projects</h2>
-  <div class="projects">
-    <div class="project"><h3>Portfolio</h3></div>
-    <div class="project"><h3>Business Website</h3></div>
-    <div class="project"><h3>Web App</h3></div>
+<section id="about">
+  <div class="container">
+    <h2>About Me</h2>
+    <p>
+      I am a passionate Cyber Security student at Mount Kenya University,
+      driven by a strong interest in protecting systems, networks,
+      and digital assets against modern cyber threats.
+    </p>
   </div>
 </section>
 
-<section id="contact" class="reveal">
-  <h2>Contact Me</h2>
-  <div class="contact-btns">
-    <a href="https://wa.me/254700000000">WhatsApp</a>
-    <a href="mailto:daudigreens@gmail.com">Email</a>
+<section id="skills">
+  <div class="container">
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="card">Cyber Security Fundamentals</div>
+      <div class="card">Networking Basics</div>
+      <div class="card">Web Development</div>
+      <div class="card">System Security Awareness</div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="container">
+    <h2>Part-Time Work</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Part-Time Position</h3>
+        <p><!-- Fill yourself --></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2>Contact & Socials</h2>
+    <p>Email: yourname@email.com</p>
+    <p>Phone: +254 xxx xxx xxx</p>
+    <div class="socials">
+      <a href="https://github.com/">GitHub</a>
+      <a href="https://linkedin.com/">LinkedIn</a>
+      <a href="cv.pdf" download>Download CV</a>
+    </div>
   </div>
 </section>
 
 <footer>
-  © 2026 Daudi Greens | Built with ❤️
+  © 2026 Bill Kariuki | Cyber Security Student
 </footer>
 
 <script>
-/* MENU */
-function toggleMenu(){
-  document.getElementById("nav").classList.toggle("active");
+// MENU
+function menu(){
+  const l=document.getElementById("links");
+  l.style.display=l.style.display==="flex"?"none":"flex";
 }
 
-/* THEME */
-function toggleTheme(){
-  document.body.classList.toggle("light");
+// DARK MODE
+function dark(){
+  document.body.classList.toggle("dark");
 }
 
-/* TYPING */
-const roles=["Web Developer","UI Designer","Problem Solver"];
-let i=0,j=0;
-function type(){
-  if(j<roles[i].length){
-    typing.innerHTML+=roles[i][j++];setTimeout(type,100);
-  }else setTimeout(erase,1500);
-}
-function erase(){
-  if(j>0){
-    typing.innerHTML=roles[i].substring(0,--j);
-    setTimeout(erase,60);
-  }else{ i=(i+1)%roles.length; setTimeout(type,500); }
-}
-type();
-
-/* SCROLL ANIMATION */
-window.addEventListener("scroll",()=>{
-  document.querySelectorAll(".reveal").forEach(el=>{
-    if(el.getBoundingClientRect().top<window.innerHeight-100){
-      el.classList.add("active");
+// REVEAL
+const cards=document.querySelectorAll(".card");
+function reveal(){
+  cards.forEach(c=>{
+    if(c.getBoundingClientRect().top<window.innerHeight-50){
+      c.classList.add("show");
     }
   });
-});
+}
+window.addEventListener("scroll",reveal);
+reveal();
 
-/* SKILL BAR ANIMATE */
-document.querySelectorAll(".bar div").forEach(bar=>{
-  bar.style.width=bar.dataset.width;
-});
+// CYBER BACKGROUND WITH LOCKS
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+canvas.width=innerWidth;
+canvas.height=innerHeight;
+
+const nodes=[];
+for(let i=0;i<50;i++){
+  nodes.push({
+    x:Math.random()*canvas.width,
+    y:Math.random()*canvas.height,
+    dx:(Math.random()-0.5)*0.6,
+    dy:(Math.random()-0.5)*0.6,
+    lock:Math.random()<0.2
+  });
+}
+
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  nodes.forEach((n,i)=>{
+    n.x+=n.dx; n.y+=n.dy;
+    if(n.x<0||n.x>canvas.width) n.dx*=-1;
+    if(n.y<0||n.y>canvas.height) n.dy*=-1;
+
+    ctx.fillStyle="rgba(0,0,0,0.7)";
+    if(n.lock){
+      ctx.font="16px Arial";
+      ctx.fillText("🔒",n.x,n.y);
+    }else{
+      ctx.beginPath();
+      ctx.arc(n.x,n.y,2,0,Math.PI*2);
+      ctx.fill();
+    }
+
+    for(let j=i+1;j<nodes.length;j++){
+      let dx=n.x-nodes[j].x;
+      let dy=n.y-nodes[j].y;
+      let d=Math.sqrt(dx*dx+dy*dy);
+      if(d<120){
+        ctx.strokeStyle="rgba(0,0,0,0.1)";
+        ctx.beginPath();
+        ctx.moveTo(n.x,n.y);
+        ctx.lineTo(nodes[j].x,nodes[j].y);
+        ctx.stroke();
+      }
+    }
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+
+onresize=()=>{canvas.width=innerWidth;canvas.height=innerHeight;}
 </script>
 
 </body>
