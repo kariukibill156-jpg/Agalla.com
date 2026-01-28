@@ -3,377 +3,242 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Karis The GOAT 🐐</title>
+<title>Carlvyne Web Solution x Agalla Web Tech</title>
 
 <style>
 :root{
-  --black:#000;
-  --white:#fff;
-  --gray:#f2f2f2;
+  --black:#0b0b0b;
+  --gold:#d4af37;
+  --white:#ffffff;
+  --glass:rgba(255,255,255,0.08);
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
 
-body{
-  background:var(--white);
-  color:var(--black);
-  transition:0.3s;
-  overflow-x:hidden;
-}
-
-body.dark{
-  background:var(--black);
-  color:var(--white);
-}
-
-/* BACKGROUND */
-canvas{
-  position:fixed;
-  inset:0;
-  z-index:0;
-}
+body{background:var(--black);color:var(--white);}
 
 /* NAV */
 header{
   position:fixed;
   top:0;
   width:100%;
-  background:black;
-  z-index:10;
-}
-
-.nav{
-  max-width:1100px;
-  margin:auto;
-  padding:15px 20px;
+  background:#000;
+  padding:15px 30px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  border-bottom:1px solid var(--gold);
+  z-index:1000;
 }
 
-.logo{
-  color:white;
-  font-size:22px;
-  font-weight:bold;
-}
+.logo{color:var(--gold);font-weight:700;font-size:22px}
 
-.toggle{
-  border:1px solid white;
-  padding:5px 10px;
-  color:white;
-  cursor:pointer;
-}
+nav a{color:#fff;text-decoration:none;margin-left:25px}
+
+.menu{display:none;font-size:26px;cursor:pointer}
 
 /* SECTIONS */
 section{
-  padding:100px 20px;
-  position:relative;
-  z-index:1;
-}
-
-.hero{
-  padding-top:140px;
-  text-align:center;
-  background:var(--gray);
-}
-
-body.dark .hero{
-  background:#111;
-}
-
-.hero img{
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  border:4px solid black;
-  object-fit:cover;
-}
-
-.hero h1{
-  margin-top:15px;
-  font-size:34px;
-}
-
-.hero p{
-  margin-top:10px;
-  font-size:18px;
-}
-
-.btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:10px 25px;
-  border:2px solid black;
-  text-decoration:none;
-  color:black;
-  font-weight:bold;
-}
-
-.btn:hover{
-  background:black;
-  color:white;
-}
-
-.container{
-  max-width:1000px;
+  padding:100px 30px;
+  max-width:1300px;
   margin:auto;
 }
 
-h2{
-  text-align:center;
-  margin-bottom:25px;
+h2{text-align:center;color:var(--gold);font-size:36px;margin-bottom:40px}
+
+/* HERO */
+.hero{text-align:center;min-height:100vh;padding-top:140px}
+.hero h1{font-size:46px;color:var(--gold)}
+.hero p{max-width:700px;margin:20px auto;color:#ddd}
+.btn{
+  display:inline-block;
+  padding:14px 34px;
+  border:2px solid var(--gold);
+  color:var(--gold);
+  border-radius:40px;
+  text-decoration:none;
+  margin:10px;
+}
+.btn:hover{background:var(--gold);color:#000}
+
+/* DASHBOARD */
+.dashboard{
+  display:grid;
+  grid-template-columns:240px 1fr;
+  gap:30px;
 }
 
-.grid{
+/* SIDEBAR */
+.sidebar{
+  background:var(--glass);
+  border:1px solid var(--gold);
+  border-radius:20px;
+  padding:25px;
+  height:fit-content;
+}
+
+.sidebar h3{color:var(--gold);margin-bottom:20px}
+
+.sidebar a{
+  display:block;
+  color:#fff;
+  text-decoration:none;
+  margin-bottom:15px;
+  padding:10px;
+  border-radius:10px;
+}
+.sidebar a:hover{background:rgba(212,175,55,.2)}
+
+/* MAIN */
+.main{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:30px;
+}
+
+/* STATS */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:20px;
 }
 
 .card{
-  border:2px solid black;
-  padding:20px;
-  opacity:0;
-  transform:translateY(20px);
-  transition:0.4s;
+  background:var(--glass);
+  border:1px solid var(--gold);
+  padding:25px;
+  border-radius:18px;
+  text-align:center;
 }
 
-.card.show{
-  opacity:1;
-  transform:translateY(0);
-}
+.card h3{color:var(--gold);font-size:28px}
 
-/* WIFI TABLE */
+/* TABLE */
 table{
   width:100%;
   border-collapse:collapse;
-  margin-top:20px;
+  background:var(--glass);
+  border-radius:18px;
+  overflow:hidden;
 }
 
-td, th{
-  border:2px solid black;
-  padding:12px;
-  text-align:center;
-}
-
-/* WHATSAPP BUTTON */
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:black;
-  color:white;
-  padding:12px 18px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:bold;
-  z-index:20;
-}
-
-footer{
-  background:black;
-  color:white;
-  text-align:center;
+th,td{
   padding:15px;
+  border-bottom:1px solid rgba(212,175,55,.2);
+  text-align:left;
+}
+
+th{color:var(--gold)}
+
+/* MESSAGES */
+.message{
+  background:var(--glass);
+  border:1px solid var(--gold);
+  border-radius:18px;
+  padding:20px;
+  margin-bottom:15px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  border-top:1px solid var(--gold);
+  color:#aaa;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .dashboard{grid-template-columns:1fr}
+  .menu{display:block}
+  nav{display:none;flex-direction:column;background:#000;position:absolute;top:70px;right:0;width:220px}
+  nav.active{display:flex}
 }
 </style>
 </head>
 
 <body>
 
-<canvas id="bg"></canvas>
-<a class="whatsapp" href="https://wa.me/254713147856" target="_blank" onclick="offlineCheck(event)">
-  WhatsApp
-</a>
-
-<script>
-function offlineCheck(event){
-  if(!navigator.onLine){
-    event.preventDefault();
-    alert("You are offline! WhatsApp link needs internet.\nCall or message this number: +254712345678");
-  }
-}
-</script>
-<a class="whatsapp" href="https://wa.me/254713147856" target="_blank">
-  WhatsApp
-</a>
-<a class="whatsapp" href="https://wa.me/254713147856" target="_blank">
-  WhatsApp
-</a>
-
 <header>
-  <div class="nav">
-    <div class="logo">Karis 🐐</div>
-    <span class="toggle" onclick="dark()">Dark</span>
-  </div>
+  <div class="logo">Carlvyne Web Tech</div>
+  <div class="menu" onclick="toggleMenu()">☰</div>
+  <nav id="nav">
+    <a href="#home">Home</a>
+    <a href="#dashboard">Admin</a>
+  </nav>
 </header>
 
-<section class="hero">
-  <img src="profile.jpg" alt="Karis the GOAT">
-
-  <!-- TYPING TEXT -->
-  <h1 id="type"></h1>
-
-  <p>
-    Built Different • Focused • Always Connected
-  </p>
-
-  <a href="#wifi" class="btn">WiFi Status</a>
+<section class="hero" id="home">
+  <h1>Carlvyne Web Tech Solution</h1>
+  <p>Admin-controlled premium web agency in partnership with <b>Agalla Web Tech</b></p>
+  <a href="#dashboard" class="btn">Open Admin Dashboard</a>
 </section>
 
-<section>
-  <div class="container">
-    <h2>About Karis 🐐</h2>
-    <p>
-      Karis the GOAT represents consistency, resilience, and smart hustle.
-      Always online. Always ready. Always delivering.
-    </p>
+<section id="dashboard">
+<h2>Admin Dashboard</h2>
+
+<div class="dashboard">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h3>Admin Panel</h3>
+    <a href="#">Dashboard</a>
+    <a href="#">Orders</a>
+    <a href="#">Payments</a>
+    <a href="#">Clients</a>
+    <a href="#">Messages</a>
+    <a href="#">Settings</a>
   </div>
-</section>
 
-<section>
-  <div class="container">
-    <h2>Why Karis is the GOAT</h2>
-    <div class="grid">
-      <div class="card">24/7 Network Availability</div>
-      <div class="card">Reliable & Secure Connection</div>
-      <div class="card">Silent Hustle</div>
-      <div class="card">GOAT Mentality</div>
+  <!-- MAIN -->
+  <div class="main">
+
+    <div class="stats">
+      <div class="card"><h3>12</h3><p>Projects</p></div>
+      <div class="card"><h3>8</h3><p>Active Clients</p></div>
+      <div class="card"><h3>KES 120K</h3><p>Revenue</p></div>
+      <div class="card"><h3>3</h3><p>Pending Orders</p></div>
     </div>
-  </div>
-</section>
-
-<section id="wifi">
-  <div class="container">
-    <h2>Network / WiFi Table 📡</h2>
 
     <table>
       <tr>
+        <th>Client</th>
         <th>Service</th>
         <th>Status</th>
+        <th>Payment</th>
       </tr>
       <tr>
-        <td>WiFi Connection</td>
-        <td>Active ✅</td>
+        <td>David Green</td>
+        <td>Website Design</td>
+        <td>In Progress</td>
+        <td>Paid</td>
       </tr>
       <tr>
-        <td>Network Speed</td>
-        <td>Fast ⚡</td>
-      </tr>
-      <tr>
-        <td>Availability</td>
-        <td>24/7 ⏰</td>
-      </tr>
-      <tr>
-        <td>Security</td>
-        <td>Protected 🔒</td>
+        <td>karis Dynasty</td>
+        <td>Branding</td>
+        <td>Pending</td>
+        <td>Unpaid</td>
       </tr>
     </table>
+
+    <div>
+      <h3 style="color:var(--gold);margin-bottom:15px">Client Messages</h3>
+      <div class="message">📩 Need a business website ASAP</div>
+      <div class="message">📩 Can I pay via M-Pesa?</div>
+    </div>
+
   </div>
+</div>
 </section>
 
 <footer>
-  © 2026 Karis The GOAT 🐐 | Always Online • Always Winning
+© 2026 Carlvyne Web Solution × Agalla Web Tech
 </footer>
 
 <script>
-// DARK MODE
-function dark(){
-  document.body.classList.toggle("dark");
+function toggleMenu(){
+  document.getElementById("nav").classList.toggle("active");
 }
-
-// CARD REVEAL
-const cards=document.querySelectorAll(".card");
-function reveal(){
-  cards.forEach(c=>{
-    if(c.getBoundingClientRect().top < window.innerHeight-50){
-      c.classList.add("show");
-    }
-  });
-}
-window.addEventListener("scroll", reveal);
-reveal();
-
-// TYPING EFFECT
-const text="Karis The GOAT 🐐";
-let i=0;
-function type(){
-  if(i<text.length){
-    document.getElementById("type").innerHTML+=text.charAt(i);
-    i++;
-    setTimeout(type,120);
-  }
-}
-type();
-
-// CYBER BACKGROUND
-const canvas=document.getElementById("bg");
-const ctx=canvas.getContext("2d");
-canvas.width=innerWidth;
-canvas.height=innerHeight;
-
-const dots=[];
-for(let i=0;i<50;i++){
-  dots.push({
-    x:Math.random()*canvas.width,
-    y:Math.random()*canvas.height,
-    dx:(Math.random()-0.5)*0.6,
-    dy:(Math.random()-0.5)*0.6
-  });
-}
-
-function animate(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  dots.forEach((d,i)=>{
-    d.x+=d.dx;
-    d.y+=d.dy;
-    if(d.x<0||d.x>canvas.width) d.dx*=-1;
-    if(d.y<0||d.y>canvas.height) d.dy*=-1;
-
-    ctx.beginPath();
-    ctx.arc(d.x,d.y,2,0,Math.PI*2);
-    ctx.fill();
-
-    for(let j=i+1;j<dots.length;j++){
-      let dx=d.x-dots[j].x;
-      let dy=d.y-dots[j].y;
-      let dist=Math.sqrt(dx*dx+dy*dy);
-      if(dist<120){
-        ctx.strokeStyle="rgba(0,0,0,0.1)";
-        ctx.beginPath();
-        ctx.moveTo(d.x,d.y);
-        ctx.lineTo(dots[j].x,dots[j].y);
-        ctx.stroke();
-      }
-    }
-  });
-  requestAnimationFrame(animate);
-}
-animate();
-
-onresize=()=>{
-  canvas.width=innerWidth;
-  canvas.height=innerHeight;
-};
 </script>
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/index.css">
-  <script src="js/index.js"></script>
-  <title>Tuesday 2</title>
-</head>
-<body>
-	<h1></h1>
 </body>
 </html>
